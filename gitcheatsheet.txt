@@ -1,0 +1,15 @@
+git init test
+git add .
+git commit -m '1st', git commit -am '1st' (add+commit)
+git remote add origin https:/github.com~
+git remote -v
+git remote remove origin
+git push -u origin master, git push
+git pull origin master
+git status
+git log, git log --stat
+git diff
+git checkout -- hello.txt (수정했지만, add 하기전 취소)
+git reset HEAD hello.txt(add했지만 취소할 때)
+git reset HEAD^ (add, commit까지 하고 취소)
+git clone https:/github.com~ (현재 dir에 통째로 클론)
