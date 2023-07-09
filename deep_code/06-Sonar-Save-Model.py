@@ -39,9 +39,18 @@ model.compile(loss='mean_squared_error',
 
 model.fit(X_train, Y_train, epochs=130, batch_size=5)
 model.save('my_model.h5')  # 모델을 컴퓨터에 저장
-
 del model       # 테스트를 위해 메모리 내의 모델을 삭제
 model = load_model('my_model.h5') # 모델을 새로 불러옴
+
+# pickle을 사용하는 방법
+# import pickle
+# fp1=open('파일명', 'wb')
+# pickle.dump(model, fp1)
+# fp1.close()
+# 읽을 땐,
+# fp2=open('파일명', 'rb')
+# model=pickle.load(fp2)
+# fp2.close()
 
 print("\n Test Accuracy: %.4f" % (model.evaluate(X_test, Y_test)[1]))  # 불러온 모델로 테스트 실행
 
