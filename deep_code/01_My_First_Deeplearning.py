@@ -12,7 +12,8 @@ import tensorflow as tf
 # 실행할 때마다 같은 결과를 출력하기 위해 설정하는 부분입니다.
 seed = 0
 numpy.random.seed(seed)
-tf.set_random_seed(seed)
+# tf.set_random_seed(seed) # 에러남.
+tf.random.set_seed(seed)
 
 # 준비된 수술 환자 데이터를 불러들입니다.
 Data_set = numpy.loadtxt("../dataset/ThoraricSurgery.csv", delimiter=",")
@@ -24,7 +25,9 @@ Y = Data_set[:,17]
 # 딥러닝 구조를 결정합니다(모델을 설정하고 실행하는 부분입니다).
 model = Sequential()
 model.add(Dense(30, input_dim=17, activation='relu'))
+# 17개 입력값, 30개의 노드 -> 이 두개의 층이 은닉층
 model.add(Dense(1, activation='sigmoid'))
+# 1개의 출력값 -> 출력층
 
 # 딥러닝을 실행합니다.
 model.compile(loss='mean_squared_error', optimizer='adam', metrics=['accuracy'])
