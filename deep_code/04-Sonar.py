@@ -21,7 +21,7 @@ print(df.info())
 print(df.head())
 '''
 dataset = df.values
-X = dataset[:,0:60]
+X = dataset[:,0:60].astype(float)
 Y_obj = dataset[:,60]
 
 # 문자열 변환
