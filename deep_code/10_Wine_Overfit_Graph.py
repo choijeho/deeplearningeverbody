@@ -11,13 +11,13 @@ import tensorflow as tf
 # seed 값 설정
 seed = 0
 numpy.random.seed(seed)
-tf.set_random_seed(seed)
+tf.random.set_seed(seed)
 
 df_pre = pd.read_csv('../dataset/wine.csv', header=None)
 df = df_pre.sample(frac=0.15)
 
 dataset = df.values
-X = dataset[:,0:12]
+X = dataset[:,0:12].astype(float)
 Y = dataset[:,12]
 
 # 모델의 설정
