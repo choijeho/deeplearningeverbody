@@ -10,12 +10,12 @@ import tensorflow as tf
 # seed 값 설정
 seed = 0
 numpy.random.seed(seed)
-tf.set_random_seed(seed)
+tf.random.set_seed(seed)
 
 df = pd.read_csv('../dataset/sonar.csv', header=None)
 
 dataset = df.values
-X = dataset[:,0:60]
+X = dataset[:,0:60].astype(float)
 Y_obj = dataset[:,60]
 
 e = LabelEncoder()
