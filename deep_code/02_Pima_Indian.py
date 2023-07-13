@@ -6,7 +6,7 @@ import tensorflow as tf
 # seed 값 생성
 seed = 0
 numpy.random.seed(seed)
-tf.set_random_seed(seed)
+tf.random.set_seed(seed)
 
 # 데이터 로드
 dataset = numpy.loadtxt("../dataset/pima-indians-diabetes.csv", delimiter=",")
