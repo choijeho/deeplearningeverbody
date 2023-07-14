@@ -30,7 +30,8 @@ model.add(Dense(1, activation='sigmoid'))
 # 모델 컴파일
 model.compile(loss='binary_crossentropy',
           optimizer='adam',
-          metrics=['accuracy'])
+          # metrics=['accuracy']) # 아래에서 'acc' 를 못 찾는다는 에러 발생함
+          metrics=['acc'])
 
 # 모델 저장 폴더 설정
 MODEL_DIR = './model/'
