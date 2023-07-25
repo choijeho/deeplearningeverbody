@@ -1,4 +1,4 @@
-# news category classification
+# reuter news category classification
 from keras.models import Sequential
 from keras.layers import Dense, LSTM, Embedding, Dropout, Conv1D, MaxPooling1D, Activation
 from keras.preprocessing import sequence
